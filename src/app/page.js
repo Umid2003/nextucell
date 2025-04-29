@@ -1,103 +1,158 @@
-import Image from "next/image";
+// "use client";
+// import React, { useState } from 'react'
+// import Redux from '../assets/logo.png'
+// import Image from 'next/image'
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+// const Page = () => {
+//   const [count,setCount]=useState(0)
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+//   const changeNumber=(num)=>{
+//     num >= 0 ? setCount(num):''
+//   }
+
+//   return (
+//     <div className='h-[80vh] flex flex-col items-center justify-center gap-4'>
+//        {/* <h1 className='bg-red-400 p-4 text-white'>Hello Next JS</h1>
+//        <p>Lorem ipsum dolor sit amet.</p>
+//        <button className='bg-blue-600 text-white p-2 rounded-md'>Click</button>
+//       <Image src={Redux}/> */}
+//       <h1>Count: {count}</h1>
+//       <div className="btns flex gap-4">
+//         <button type="button" onClick={()=>changeNumber(count+1)}>Add</button>
+//         <button type="button" onClick={() => changeNumber(count - 1)}>Del</button>
+//         <button type="button" onClick={() => changeNumber(0)}>Res</button>
+//       </div>
+//      </div>
+//   )
+// }
+
+// export default Page
+
+// 'use client';
+// import React, { useState } from 'react'
+
+// const Page = () => {
+//   const [text,setText]=useState('')
+//   const [textArea,setTextArea]=useState('')
+
+//   const changeText=()=>{
+//     // let newText=textArea
+//   // newText=textArea.replace('n','н')
+//     setText(textArea.toLowerCase().replace('sen','ceн'))
+//   }
+
+//   return (
+//     <div className='h-[80vh] flex justify-center items-center gap-4 flex-col'>
+//       <textarea onChange={(e) => setTextArea(e.target.value)} value={textArea} name="" id="" placeholder='Text...' className='border-2 border-gray-500 p-2 rounded-md w-[70vw] h-[40vh] resize-none'></textarea>
+//    <button onClick={changeText} type="button" className='bg-green-600 text-white py-2 rounded-md cursor-pointer px-4'>Change to krill</button>
+//    <p className='text-center h-[10vh] flex justify-center items-center'>{text}</p>
+//     </div>
+//   )
+// }
+
+// export default Page
+// "use client";
+// import axios from "axios";
+// import Link from "next/link";
+// import React, { useEffect, useState } from "react";
+
+// const page = () => {
+//   const [animals, setAnimals] = useState([]);
+//   const [search, setSearch] = useState('')
+
+
+//   useEffect(() => {
+//     axios
+//       .get(
+//         "https://api.api-ninjas.com/v1/animals?x-api-key=fXNA1QELMpyKgetuIVyAgDlr9PUaIkKs0D2BQ8Y6&name=fox"
+//       )
+//       .then((data) => setAnimals(data.data))
+//       .catch((err) => console.log(err));
+//   },[]);
+  
+  
+//   const searchAnimal=(text)=>{
+//         axios.get(
+//           `https://api.api-ninjas.com/v1/animals?x-api-key=fXNA1QELMpyKgetuIVyAgDlr9PUaIkKs0D2BQ8Y6&name=${text}`
+//         )
+//   .then((data) => setAnimals(data.data))
+//   .catch((err) => console.log(err));
+//   setSearch('')
+//   }
+//   return (
+//     <>
+//        <nav className="h-[10vh] bg-purple-900 text-white flex justify-between px-10 items-center">
+//             <h1>Logo</h1>
+//             <ul className="max-md:hidden flex gap-20">
+//               <li><Link href="/">Home</Link></li>
+//               <li><Link href="/about">About</Link></li>
+//               <li><Link href="/contact">Contact</Link></li>
+//             </ul>
+//             <form  >
+//             <input type="search" placeholder="Animals ..." value={search} className="p-2 rounded-md border-2 outline-none border-white placeholder:text-white" onChange={(e)=>setSearch(e.target.value)}/>
+//                         </form>
+//           </nav>
+//       <div className="min-h-[80vh] py-4 flex justify-center items-center">
+//         <div className="grid grid-cols-4 gap-4 max-md:grid-cols-2 w-[95vw]">
+//           {animals.length?animals.map((item, index) => (
+//             <div className="bg-gray-600 text-white flex flex-col gap-4 rounded-md p-2 items-center">
+//               <h3>Title: {item.name}</h3>
+//               <h3>Age: {item.characteristics.lifespan}</h3>
+//             </div>
+//           )):'No result'}
+//         </div>
+//       </div>
+//     </>
+   
+//   );
+// };
+
+// export default page;
+
+"use client" 
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+
+const page = () => {
+  const [foods,setFoods]=useState([])
+  const [selectedMeal, setSelectedMeal] = useState()
+const [showSelectedMeal,setShowSelectedMeal]=useState(false)
+  useEffect(()=>{
+    axios.get('https://www.themealdb.com/api/json/v1/1/search.php?s=chicken').then(data=>setFoods(data.data.meals)).catch(err=>console.log(err))
+  },[selectedMeal])  
+
+  const selectedMealById=(id)=>{
+    axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`).then(data => setSelectedMeal(data.data.meals[0])).catch(err => console.log(err))    
+    setShowSelectedMeal(true)
+  }   
+  
+  return ( 
+    <div className='min-h-[80vh]'>
+<div className='grid grid-cols-3 gap-2 w-[90vw] mx-auto my-0'>
+        {foods.length ? foods.slice(0,3).map((item, index) => (
+          <div onClick={() => selectedMealById(item.idMeal)} className='p-2 rounded-md border-gray-600 border-2 cursor-pointer shadow-amber-600 shadow-lg'>
+            <img className='w-full' src={item.strMealThumb} alt="" srcset="" />
+            <h3>{item.strMeal}</h3>
+          </div>
+        )) : 'Loading'}    
+
+</div>
+      <div className='absolute h-[80vh] top-[55%] left-[50%] translate-x-[-50%] translate-y-[-55%]'>
+        {showSelectedMeal&&selectedMeal ? 
+        <div className='flex gap-4 w-[70vw] items-center bg-amber-300 p-4 rounded-xl'>
+          <div className='flex flex-1 flex-col gap-4'>
+              <h2>Title: {selectedMeal.strMeal}</h2>
+              <p>Instruction: {selectedMeal.strInstructions}</p>
+          </div>
+            <iframe src={`https://www.youtube.com/embed/${selectedMeal.strYoutube.slice(-11)}`} frameborder="0" title={selectedMeal.strMeal} className='flex-1 h-[50vh]'></iframe>
+            <span onClick={()=>setShowSelectedMeal(false)} className='absolute top-10 right-10 cursor-pointer text-2xl'>X</span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        :""}
+      </div>
     </div>
-  );
+  )
 }
+
+export default page
+
+
